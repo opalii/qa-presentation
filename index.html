@@ -373,7 +373,7 @@ code  { font-family:'JetBrains Mono','Fira Code',monospace; font-size:.85em; }
   </div>
 </div>
 
-<!-- ══ 5 AP INTRO ══ -->
+<!-- ══ 6 AP INTRO ══ -->
 <div class="slide" data-title="Антипатерни">
   <div class="photo" style="background-image:url('bg_highfive.png')"></div>
   <div class="tint-deep"></div>
@@ -429,7 +429,7 @@ code  { font-family:'JetBrains Mono','Fira Code',monospace; font-size:.85em; }
     <div class="ap-right" style="background:var(--dark2)">
       <h2 class="h2 inv" style="font-size:clamp(1.4rem,2.8vw,2.7rem)" data-a="1"><code style="font-size:.85em; color:var(--t3)">POST /cart/add</code> повертає 200 — <strong class="inv">окей, працює.</strong></h2>
       <hr class="rl" data-a="2">
-      <p class="body lt" data-a="3"><strong style="color:var(--bg); font-weight:600">Але це тест функції, не системи.</strong> Юзер вже додав 99 товарів і є ліміт. Паралельна вкладка вже додала цей товар. Товар видалили між двома запитами.</p>
+      <p data-a="3" style="font-size:clamp(1rem,1.3vw,1.1rem); line-height:1.7; color:var(--d1)"><strong style="font-weight:600">Але це тест функції, не системи.</strong> Юзер вже додав 99 товарів і є ліміт. Паралельна вкладка вже додала цей товар. Товар видалили між двома запитами.</p>
       <p class="cap mt16" style="color:var(--d3)" data-a="4">Дефекти кластеризуються на стиках. → Принцип 04</p>
     </div>
   </div>
@@ -862,6 +862,40 @@ code  { font-family:'JetBrains Mono','Fira Code',monospace; font-size:.85em; }
   </div>
 </div>
 
+<!-- ══ REQUIREMENTS ══ -->
+<div class="slide" data-title="Вимоги">
+  <div class="bar dark" style="position:absolute; z-index:10"><span></span></div>
+  <div style="position:relative; z-index:2; display:grid; grid-template-columns:36fr 64fr; width:100%; height:100%">
+    <!-- LEFT -->
+    <div style="background:var(--dark); display:flex; flex-direction:column; justify-content:center; padding:72px 52px">
+      <div style="display:flex; gap:10px; align-items:center; margin-bottom:24px" data-a="1">
+        <span style="background:rgba(240,232,224,.12); border:1px solid rgba(240,232,224,.2); color:var(--d2); font-size:12px; font-weight:700; letter-spacing:.08em; padding:4px 12px; text-transform:uppercase">Spinoff</span>
+        <span style="color:var(--d3); font-size:12px; letter-spacing:.06em; text-transform:uppercase">IEEE 29148</span>
+      </div>
+      <h2 class="h2 inv" style="font-size:clamp(1.4rem,2.6vw,2.4rem); font-weight:300; line-height:1.15" data-a="1">Тестування<br>починається<br><strong class="inv">з вимог</strong></h2>
+      <p class="body lt mt24" data-a="2">Погана вимога — гарантований баг. Не в коді, а ще на папері.</p>
+      <p class="body lt mt12" data-a="3">Хороша вимога має 12 атрибутів якості.</p>
+    </div>
+    <!-- RIGHT: 12 attributes, 2-col grid -->
+    <div style="background:var(--bg); padding:48px 52px; display:flex; flex-direction:column; justify-content:center" data-a="2">
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:0; border:1px solid rgba(64,52,51,.12)">
+        <div style="padding:12px 16px; border-right:1px solid rgba(64,52,51,.1); border-bottom:1px solid rgba(64,52,51,.1)"><p style="font-size:14px; font-weight:700; color:var(--t1); margin-bottom:3px">Конкретна</p><p style="font-size:13px; color:var(--t3); line-height:1.45">Без розмитих формулювань</p></div>
+        <div style="padding:12px 16px; border-bottom:1px solid rgba(64,52,51,.1)"><p style="font-size:14px; font-weight:700; color:var(--t1); margin-bottom:3px">Однозначна</p><p style="font-size:13px; color:var(--t3); line-height:1.45">Тільки одна інтерпретація</p></div>
+        <div style="padding:12px 16px; border-right:1px solid rgba(64,52,51,.1); border-bottom:1px solid rgba(64,52,51,.1)"><p style="font-size:14px; font-weight:700; color:var(--t1); margin-bottom:3px">Вимірювана</p><p style="font-size:13px; color:var(--t3); line-height:1.45">Можна об'єктивно перевірити</p></div>
+        <div style="padding:12px 16px; border-bottom:1px solid rgba(64,52,51,.1)"><p style="font-size:14px; font-weight:700; color:var(--t1); margin-bottom:3px">Повна</p><p style="font-size:13px; color:var(--t3); line-height:1.45">Містить всі умови і обмеження</p></div>
+        <div style="padding:12px 16px; border-right:1px solid rgba(64,52,51,.1); border-bottom:1px solid rgba(64,52,51,.1)"><p style="font-size:14px; font-weight:700; color:var(--t1); margin-bottom:3px">Несуперечлива</p><p style="font-size:13px; color:var(--t3); line-height:1.45">Не конфліктує з іншими</p></div>
+        <div style="padding:12px 16px; border-bottom:1px solid rgba(64,52,51,.1)"><p style="font-size:14px; font-weight:700; color:var(--t1); margin-bottom:3px">Реалістична</p><p style="font-size:13px; color:var(--t3); line-height:1.45">Здійсненна в межах проєкту</p></div>
+        <div style="padding:12px 16px; border-right:1px solid rgba(64,52,51,.1); border-bottom:1px solid rgba(64,52,51,.1)"><p style="font-size:14px; font-weight:700; color:var(--t1); margin-bottom:3px">Необхідна</p><p style="font-size:13px; color:var(--t3); line-height:1.45">Відповідає реальній потребі</p></div>
+        <div style="padding:12px 16px; border-bottom:1px solid rgba(64,52,51,.1)"><p style="font-size:14px; font-weight:700; color:var(--t1); margin-bottom:3px">Трасована</p><p style="font-size:13px; color:var(--t3); line-height:1.45">Пов'язана з метою і тестами</p></div>
+        <div style="padding:12px 16px; border-right:1px solid rgba(64,52,51,.1); border-bottom:1px solid rgba(64,52,51,.1)"><p style="font-size:14px; font-weight:700; color:var(--t1); margin-bottom:3px">Атомарна</p><p style="font-size:13px; color:var(--t3); line-height:1.45">Одна вимога — одна ідея</p></div>
+        <div style="padding:12px 16px; border-bottom:1px solid rgba(64,52,51,.1)"><p style="font-size:14px; font-weight:700; color:var(--t1); margin-bottom:3px">Пріоритизована</p><p style="font-size:13px; color:var(--t3); line-height:1.45">Must / Should / Could / Won't</p></div>
+        <div style="padding:12px 16px; border-right:1px solid rgba(64,52,51,.1)"><p style="font-size:14px; font-weight:700; color:var(--t1); margin-bottom:3px">Незалежна від реалізації</p><p style="font-size:13px; color:var(--t3); line-height:1.45">Що, а не як</p></div>
+        <div style="padding:12px 16px"><p style="font-size:14px; font-weight:700; color:var(--t1); margin-bottom:3px">Модифікована</p><p style="font-size:13px; color:var(--t3); line-height:1.45">Кожна вимога незалежна і унікальна</p></div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <!-- ══ 21 BRIDGE → ТЕХНІКИ ══ -->
 <div class="slide" data-title="Техніки тест-дизайну">
   <div class="photo" style="background-image:url('bg_team.png')"></div>
@@ -1149,7 +1183,75 @@ code  { font-family:'JetBrains Mono','Fira Code',monospace; font-size:.85em; }
   </div>
 </div>
 
-<!-- ══ 28 FINAL ══ -->
+<!-- ══ ЩО ДАЛІ ══ -->
+<div class="slide" data-title="Що далі">
+  <div class="bar dark" style="position:absolute; z-index:10"><span></span></div>
+  <div style="position:relative; z-index:2; display:grid; grid-template-columns:1fr 1fr; gap:1px; background:rgba(64,52,51,.12); width:100%; height:100%">
+
+    <!-- LEFT: Block 1 -->
+    <div style="background:var(--light); display:flex; flex-direction:column; justify-content:center; padding:72px 60px">
+      <p class="label dk" style="margin-bottom:24px" data-a="1">Продовження</p>
+      <h2 class="h2" style="font-size:clamp(1.5rem,2.8vw,2.6rem); margin-bottom:32px" data-a="1">Що <strong>далі</strong></h2>
+      <div style="display:flex; flex-direction:column; gap:16px" data-a="2">
+        <div style="display:flex; gap:14px; align-items:flex-start; padding:16px 20px; background:var(--bg); border-left:3px solid var(--dark)">
+          <span style="font-size:20px; line-height:1">⚡</span>
+          <div>
+            <p style="font-size:15px; font-weight:700; color:var(--t1); margin-bottom:3px">BetterPowers</p>
+          </div>
+        </div>
+        <div style="display:flex; gap:14px; align-items:flex-start; padding:16px 20px; background:var(--bg); border-left:3px solid var(--dark)">
+          <span style="font-size:20px; line-height:1">📋</span>
+          <div>
+            <p style="font-size:15px; font-weight:700; color:var(--t1); margin-bottom:3px">Хороші вимоги</p>
+          </div>
+        </div>
+        <div style="display:flex; gap:14px; align-items:flex-start; padding:16px 20px; background:var(--bg); border-left:3px solid var(--dark)">
+          <span style="font-size:20px; line-height:1">🔄</span>
+          <div>
+            <p style="font-size:15px; font-weight:700; color:var(--t1); margin-bottom:3px">Тестування на кожному кроці</p>
+            <p style="font-size:13px; color:var(--t3)">Від вимог до прода</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT: Block 2 -->
+    <div style="background:var(--dark); display:flex; flex-direction:column; justify-content:center; padding:72px 60px">
+      <p class="label lt" style="opacity:.5; margin-bottom:24px" data-a="1">Те чого немає тут</p>
+      <h2 class="h2 inv" style="font-size:clamp(1.5rem,2.8vw,2.6rem); margin-bottom:32px; font-weight:300" data-a="1">Те чого <strong class="inv">немає тут</strong></h2>
+      <div style="display:flex; flex-direction:column; gap:16px" data-a="2">
+        <div style="display:flex; gap:14px; align-items:flex-start; padding:16px 20px; background:rgba(240,232,224,.06); border-left:3px solid rgba(240,232,224,.2)">
+          <span style="font-size:20px; line-height:1">🗂</span>
+          <div>
+            <p style="font-size:15px; font-weight:700; color:var(--d1); margin-bottom:3px">Буде далі</p>
+            <p style="font-size:13px; color:var(--d3)">Наступні презентації</p>
+          </div>
+        </div>
+        <div style="display:flex; gap:14px; align-items:flex-start; padding:16px 20px; background:rgba(240,232,224,.06); border-left:3px solid rgba(240,232,224,.2)">
+          <span style="font-size:20px; line-height:1">📚</span>
+          <div>
+            <p style="font-size:15px; font-weight:700; color:var(--d1); margin-bottom:3px">ISTQB</p>
+            <a href="https://istqb.org/wp-content/uploads/2024/11/ISTQB_CTFL_Syllabus_v4.0.1.pdf" target="_blank" style="font-size:13px; color:var(--d3); text-decoration:none; border-bottom:1px solid rgba(240,232,224,.2)">CTFL Syllabus v4.0.1 →</a>
+          </div>
+        </div>
+        <div style="display:flex; gap:14px; align-items:flex-start; padding:16px 20px; background:rgba(240,232,224,.06); border-left:3px solid rgba(240,232,224,.2)">
+          <span style="font-size:20px; line-height:1">▶️</span>
+          <div>
+            <p style="font-size:15px; font-weight:700; color:var(--d1); margin-bottom:3px">YouTube</p>
+            <ul style="font-size:13px; color:var(--d3); line-height:1.8; list-style:none; padding:0; margin:0">
+              <li style="display:flex; gap:8px; align-items:baseline"><span style="opacity:.5">·</span>Software Testing</li>
+              <li style="display:flex; gap:8px; align-items:baseline"><span style="opacity:.5">·</span>Foundations of Software Testing</li>
+              <li style="display:flex; gap:8px; align-items:baseline"><span style="opacity:.5">·</span>Advanced Software Testing</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ══ FINAL ══ -->
 <div class="slide" data-title="">
   <div class="photo" style="background-image:url('bg_cover.png')"></div>
   <div class="tint-deep"></div>
