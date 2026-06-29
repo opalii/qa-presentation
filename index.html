@@ -200,69 +200,114 @@ code  { font-family:'JetBrains Mono','Fira Code',monospace; font-size:.85em; }
 
 /* ─── MOBILE ─── */
 @media (max-width: 768px) {
+  /* Prevent horizontal overflow globally */
+  html, body { overflow-x: hidden; }
+
+  /* Slides: allow vertical scroll, prevent horizontal */
+  .slide.active {
+    overflow-y: auto;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+  }
+  .slide.active > * { max-width: 100%; }
+
   /* Typography scale down */
-  .hero { font-size: clamp(2rem,8vw,3.2rem); }
-  .h1   { font-size: clamp(1.6rem,6vw,2.4rem); }
-  .h2   { font-size: clamp(1.3rem,5vw,2rem); }
-  .h3   { font-size: clamp(1rem,4vw,1.4rem); }
-  .body { font-size: clamp(.9rem,3.5vw,1rem); }
-  .body-sm { font-size: .875rem; }
-  .cap  { font-size: .8125rem; }
+  .hero { font-size: clamp(1.8rem,7.5vw,3rem) !important; }
+  .h1   { font-size: clamp(1.5rem,6vw,2.2rem) !important; }
+  .h2   { font-size: clamp(1.2rem,5vw,1.8rem) !important; }
+  .h3   { font-size: clamp(.95rem,4vw,1.3rem) !important; }
+  .body { font-size: clamp(.875rem,3.5vw,.975rem); }
+  .body-sm { font-size: .85rem; }
+  .cap  { font-size: .8rem; }
 
   /* Padding */
-  .col { padding: 52px 28px; }
-  .col.top { padding-top: 72px; }
-  .full.center { padding: 60px 28px; }
-  .full.bottom { padding: 40px 28px; }
+  .col { padding: 48px 24px 32px; }
+  .col.top { padding-top: 64px; }
+  .full.center { padding: 56px 24px 80px; }
+  .full.bottom { padding: 24px 24px 80px; }
 
-  /* All split grids → stack */
-  .split, .s35, .s40, .s50 { grid-template-columns: 1fr !important; }
+  /* All split grids → stack vertically */
+  .split, .s35, .s40, .s50,
+  [style*="grid-template-columns:36fr"] { grid-template-columns: 1fr !important; }
+  [style*="grid-template-columns:38fr"] { grid-template-columns: 1fr !important; }
+  [style*="grid-template-columns:1fr 1fr"] { grid-template-columns: 1fr !important; }
 
-  /* AP split: top banner + content below */
-  .ap-split { grid-template-columns: 1fr !important; grid-template-rows: auto 1fr; }
-  .ap-left  { padding: 32px 28px 24px; justify-content: flex-start; flex-direction: row; align-items: center; gap: 20px; }
+  /* AP slides: compact top strip + scrollable content */
+  .ap-split { grid-template-columns: 1fr !important; }
+  .ap-left  {
+    padding: 60px 24px 20px;
+    justify-content: flex-start;
+    flex-direction: row;
+    align-items: center;
+    gap: 16px;
+    min-height: auto;
+  }
   .ap-left-bg-num { display: none; }
-  .ap-left-counter { margin-bottom: 0; font-size: .75rem; }
-  .ap-left-title { font-size: clamp(1rem,4vw,1.3rem); margin-top: 0; }
-  .ap-right { padding: 28px 28px 40px; }
+  .ap-left-counter { margin-bottom: 0; font-size: .72rem; }
+  .ap-left-title { font-size: clamp(.95rem,4vw,1.2rem); margin-top: 0; }
+  .ap-right { padding: 24px 24px 40px; overflow-x: hidden; }
+  .ap-right .h2 { font-size: clamp(1.1rem,4.5vw,1.6rem) !important; }
 
-  /* 2-col grids → stack */
-  .dim-grid { grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; }
-  .dim-cell { padding: 28px 24px; }
-  .dim-n    { font-size: clamp(2rem,8vw,4rem); margin-bottom: 10px; }
+  /* Dim-grid: keep 2x2 but compact */
+  .dim-grid { grid-template-columns: 1fr 1fr !important; }
+  .dim-cell { padding: 20px 18px; }
+  .dim-n    { font-size: clamp(1.8rem,7vw,3.5rem); margin-bottom: 8px; }
+  .dim-cell h3 { font-size: .875rem; }
+  .dim-cell p  { font-size: .78rem; }
 
   /* Filter rows */
-  .frow { padding: 20px 28px; }
+  .filter-rows { flex:none; }
+  .frow { padding: 18px 24px; flex:none; min-height: 80px; }
 
   /* Sbar */
   .sbar { max-width: 100%; }
-  .sbar-item { padding: 14px 20px; }
+  .sbar-item { padding: 12px 18px; }
+  .sbar-item h4 { font-size: .9rem; }
 
   /* Nav */
-  #nav { height: 44px; padding: 0 12px; }
-  #prog { font-size: .7rem; }
+  #nav { height: 44px; padding: 0 10px; }
+  #prog { font-size: .68rem; min-width: 36px; }
   #stitle { display: none; }
   #dots { display: none; }
   #pbar { bottom: 44px; }
 
   /* Bar */
-  .bar { padding: 14px 24px; }
+  .bar { padding: 12px 20px; }
   .bar span { font-size: 11px; }
 
-  /* Table */
-  .dt th, .dt td { padding: 8px 10px; font-size: .8rem; }
+  /* Table: allow horizontal scroll */
+  .dt { font-size: .78rem; }
+  .dt th, .dt td { padding: 7px 8px; font-size: .78rem; white-space: nowrap; }
+  [style*=".dt"] { overflow-x: auto; }
 
   /* Principle rows */
-  .prow { padding: 11px 0; }
-  .prow h4 { font-size: .875rem; }
-  .prow p  { font-size: .8rem; }
-  .pnum { font-size: .7rem; min-width: 22px; }
+  .prow { padding: 10px 0; }
+  .prow h4 { font-size: .85rem; }
+  .prow p  { font-size: .78rem; }
+  .pnum { font-size: .68rem; min-width: 20px; }
 
-  /* HR margins */
-  hr.r { margin: 20px 0; }
+  /* SVGs: never overflow */
+  svg { max-width: 100% !important; height: auto !important; }
+
+  /* HR */
+  hr.r { margin: 16px 0; }
 
   /* Tags */
-  .tag { font-size: .75rem; padding: 5px 12px; }
+  .tag { font-size: .72rem; padding: 4px 10px; margin: 2px; }
+
+  /* BVA rows: fix monospace overflow */
+  [style*="font-family:monospace"] { font-size: clamp(1rem,5vw,1.6rem) !important; }
+
+  /* Photo slides: text fits */
+  .photo ~ * .hero { font-size: clamp(1.6rem,7vw,2.8rem) !important; }
+
+  /* Code inline */
+  code { font-size: .78em; word-break: break-all; }
+
+  /* Grid inside slides */
+  [style*="display:grid"][style*="grid-template-columns:1fr 1fr"] {
+    grid-template-columns: 1fr !important;
+  }
 }
 
 /* ─── ANIMATIONS ─── */
@@ -1383,9 +1428,16 @@ document.addEventListener('keydown',e=>{
   if(['ArrowLeft','ArrowUp'].includes(e.key)){e.preventDefault();go(-1);}
 });
 let tx=0;
-document.addEventListener('touchstart',e=>{tx=e.touches[0].clientX;},{passive:true});
+let ty=0;
+document.addEventListener('touchstart',e=>{
+  tx=e.touches[0].clientX;
+  ty=e.touches[0].clientY;
+},{passive:true});
 document.addEventListener('touchend',e=>{
-  if(Math.abs(e.changedTouches[0].clientX-tx)>50)
+  const dx=Math.abs(e.changedTouches[0].clientX-tx);
+  const dy=Math.abs(e.changedTouches[0].clientY-ty);
+  // Only trigger swipe if horizontal > vertical (not a scroll gesture)
+  if(dx>50 && dx>dy*1.5)
     go(e.changedTouches[0].clientX<tx?1:-1);
 });
 
