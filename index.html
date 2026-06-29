@@ -286,7 +286,6 @@ code  { font-family:'JetBrains Mono','Fira Code',monospace; font-size:.85em; }
   <div class="tint"></div>
   <div class="full center" style="padding-top:100px">
     <h1 class="hero" style="max-width:1100px" data-a="1">Щоб спіймати QA —<br>думай як <strong>QA</strong></h1>
-    <p class="body lt mt32" style="font-size:clamp(1rem,1.4vw,1.2rem); max-width:500px; text-align:center" data-a="2">Від хаотичного тестування — до системного мислення</p>
   </div>
 </div>
 
@@ -1120,7 +1119,7 @@ code  { font-family:'JetBrains Mono','Fira Code',monospace; font-size:.85em; }
       <p class="label dk" style="margin-bottom:20px" data-a="1">Exploratory Testing</p>
       <h2 class="h2" style="font-size:clamp(1.4rem,2.8vw,2.6rem)" data-a="1">Те саме, але<br><strong>не так формально</strong></h2>
       <p class="body mt24" data-a="2">Всі попередні техніки — структурований підхід: ти знаєш що шукати ще до початку.</p>
-      <p class="body mt16" data-a="2">Exploratory — коли ти просто <strong style="color:var(--t1)">ходиш по системі і дивишся що відбувається.</strong> Без скрипта, але не без думки.</p>
+      <p class="body mt16" data-a="2">Exploratory — це не просто хаотично клікати. Це <strong style="color:var(--t1)">думати в процесі</strong> — і спиратись на власний досвід: що зазвичай ламається, де бувають кути, що робить реальний юзер.</p>
       <p class="body mt16" data-a="3">Техніки покривають те що <em>ти знаєш</em>. Exploratory знаходить те, <strong style="color:var(--t1)">чого ти не знав що треба шукати.</strong></p>
     </div>
 
@@ -1220,6 +1219,7 @@ document.addEventListener('touchend',e=>{
     go(e.changedTouches[0].clientX<tx?1:-1);
 });
 
+slides[0].classList.add('active');
 updateNav();
 </script>
 </body>
