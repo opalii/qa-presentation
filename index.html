@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Тестування для розробників</title>
+<link rel="icon" type="image/png" href="favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;1,9..40,300;1,9..40,400&display=swap" rel="stylesheet">
 <style>
@@ -196,6 +197,73 @@ html, body { width:100%; height:100%; overflow:hidden; background:var(--dark2); 
 hr.r  { border:none; border-top:1px solid rgba(64,52,51,.14); width:100%; margin:28px 0; }
 hr.rl { border-top-color:rgba(240,232,224,.16); }
 code  { font-family:'JetBrains Mono','Fira Code',monospace; font-size:.85em; }
+
+/* ─── MOBILE ─── */
+@media (max-width: 768px) {
+  /* Typography scale down */
+  .hero { font-size: clamp(2rem,8vw,3.2rem); }
+  .h1   { font-size: clamp(1.6rem,6vw,2.4rem); }
+  .h2   { font-size: clamp(1.3rem,5vw,2rem); }
+  .h3   { font-size: clamp(1rem,4vw,1.4rem); }
+  .body { font-size: clamp(.9rem,3.5vw,1rem); }
+  .body-sm { font-size: .875rem; }
+  .cap  { font-size: .8125rem; }
+
+  /* Padding */
+  .col { padding: 52px 28px; }
+  .col.top { padding-top: 72px; }
+  .full.center { padding: 60px 28px; }
+  .full.bottom { padding: 40px 28px; }
+
+  /* All split grids → stack */
+  .split, .s35, .s40, .s50 { grid-template-columns: 1fr !important; }
+
+  /* AP split: top banner + content below */
+  .ap-split { grid-template-columns: 1fr !important; grid-template-rows: auto 1fr; }
+  .ap-left  { padding: 32px 28px 24px; justify-content: flex-start; flex-direction: row; align-items: center; gap: 20px; }
+  .ap-left-bg-num { display: none; }
+  .ap-left-counter { margin-bottom: 0; font-size: .75rem; }
+  .ap-left-title { font-size: clamp(1rem,4vw,1.3rem); margin-top: 0; }
+  .ap-right { padding: 28px 28px 40px; }
+
+  /* 2-col grids → stack */
+  .dim-grid { grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; }
+  .dim-cell { padding: 28px 24px; }
+  .dim-n    { font-size: clamp(2rem,8vw,4rem); margin-bottom: 10px; }
+
+  /* Filter rows */
+  .frow { padding: 20px 28px; }
+
+  /* Sbar */
+  .sbar { max-width: 100%; }
+  .sbar-item { padding: 14px 20px; }
+
+  /* Nav */
+  #nav { height: 44px; padding: 0 12px; }
+  #prog { font-size: .7rem; }
+  #stitle { display: none; }
+  #dots { display: none; }
+  #pbar { bottom: 44px; }
+
+  /* Bar */
+  .bar { padding: 14px 24px; }
+  .bar span { font-size: 11px; }
+
+  /* Table */
+  .dt th, .dt td { padding: 8px 10px; font-size: .8rem; }
+
+  /* Principle rows */
+  .prow { padding: 11px 0; }
+  .prow h4 { font-size: .875rem; }
+  .prow p  { font-size: .8rem; }
+  .pnum { font-size: .7rem; min-width: 22px; }
+
+  /* HR margins */
+  hr.r { margin: 20px 0; }
+
+  /* Tags */
+  .tag { font-size: .75rem; padding: 5px 12px; }
+}
 
 /* ─── ANIMATIONS ─── */
 @keyframes fadeUp {
