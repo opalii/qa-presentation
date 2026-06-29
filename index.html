@@ -211,6 +211,14 @@ code  { font-family:'JetBrains Mono','Fira Code',monospace; font-size:.85em; }
   }
   .slide.active > * { max-width: 100%; }
 
+  /* Ensure content never hides behind the nav bar */
+  .slide.active { padding-bottom: 56px; }
+  .full.bottom  { padding-bottom: 72px !important; }
+  .full.center  { padding-bottom: 72px !important; }
+  /* For flex/grid children that are the last panel */
+  .slide.active > div:last-child,
+  .slide.active > [style]:last-child { padding-bottom: 56px; }
+
   /* Typography scale down */
   .hero { font-size: clamp(1.8rem,7.5vw,3rem) !important; }
   .h1   { font-size: clamp(1.5rem,6vw,2.2rem) !important; }
