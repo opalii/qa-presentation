@@ -318,6 +318,23 @@ code  { font-family:'JetBrains Mono','Fira Code',monospace; font-size:.85em; }
   }
 }
 
+@keyframes shimmer {
+  0%   { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+@keyframes sparkle-pop {
+  0%   { transform: scale(0) rotate(0deg);   opacity: 1; }
+  50%  { transform: scale(1) rotate(120deg); opacity: 1; }
+  100% { transform: scale(0) rotate(240deg); opacity: 0; }
+}
+.sparkle {
+  position: absolute;
+  pointer-events: none;
+  animation: sparkle-pop .8s ease-out forwards;
+  font-size: 10px;
+  line-height: 1;
+}
+
 /* ─── ANIMATIONS ─── */
 @keyframes fadeUp {
   from { opacity:0; transform:translateY(16px); }
@@ -1333,6 +1350,15 @@ code  { font-family:'JetBrains Mono','Fira Code',monospace; font-size:.85em; }
             <p style="font-size:13px; color:var(--t3)">Від вимог до прода</p>
           </div>
         </div>
+        <div id="ai-badge" style="display:flex; gap:14px; align-items:flex-start; padding:16px 20px; margin-top:8px; background:linear-gradient(135deg, #2a1a4a 0%, #1a2a4a 50%, #2a1a3a 100%); border-left:3px solid #9b6dff; position:relative; overflow:hidden;">
+          <div style="position:absolute; inset:0; background:radial-gradient(ellipse at 20% 50%, rgba(155,109,255,.18) 0%, transparent 60%), radial-gradient(ellipse at 80% 50%, rgba(100,160,255,.12) 0%, transparent 60%); pointer-events:none;"></div>
+          <!-- sparkle container -->
+          <div id="sparkle-container" style="position:absolute; inset:0; pointer-events:none; z-index:0; overflow:hidden;"></div>
+          <span style="font-size:20px; line-height:1; position:relative; z-index:1">✨</span>
+          <div style="position:relative; z-index:1">
+            <p style="font-size:15px; font-weight:700; margin-bottom:2px; background:linear-gradient(90deg, #e0b0ff, #80c8ff, #b090ff, #80e8ff, #e0b0ff); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; background-size:300% 100%; animation:shimmer 2.5s linear infinite;">І наш улюблений AI</p>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -1452,6 +1478,26 @@ document.addEventListener('touchend',e=>{
 
 slides[0].classList.add('active');
 updateNav();
+
+// Sparkle animation for AI badge
+(function(){
+  const container = document.getElementById('sparkle-container');
+  if(!container) return;
+  const stars = ['✦','✧','⋆','·','✸','★'];
+  const colors = ['#c8a0ff','#80c8ff','#ffb8f0','#80ffdc','#ffd580'];
+  function spawn(){
+    const s = document.createElement('span');
+    s.className = 'sparkle';
+    s.textContent = stars[Math.floor(Math.random()*stars.length)];
+    s.style.color = colors[Math.floor(Math.random()*colors.length)];
+    s.style.left = (Math.random()*100)+'%';
+    s.style.top  = (Math.random()*100)+'%';
+    s.style.animationDuration = (.5+Math.random()*.6)+'s';
+    container.appendChild(s);
+    setTimeout(()=>s.remove(), 1200);
+  }
+  setInterval(spawn, 160);
+})();
 </script>
 </body>
 </html>
